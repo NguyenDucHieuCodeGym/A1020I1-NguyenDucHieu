@@ -1,0 +1,5 @@
+Begin
+	input toán, lí, hóa
+	dtb=(toán+lí+hóa)/3
+	display dtb
+End

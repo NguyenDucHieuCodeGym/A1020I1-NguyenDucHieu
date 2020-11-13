@@ -1,0 +1,12 @@
+Begin
+	input a, b, c
+	if  a>b and a>c
+	    display a là max
+        else 
+	    if b>c
+	       display b là max
+	    else 
+	       display c laf max
+	    end if
+	end if	
+End

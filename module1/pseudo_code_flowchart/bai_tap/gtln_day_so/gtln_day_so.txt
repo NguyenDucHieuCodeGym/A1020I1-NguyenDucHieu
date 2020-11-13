@@ -1,0 +1,9 @@
+Begin
+	input n, a1, a2,..., an
+	max = a1	
+	for (i=2;i<n;i=i+1)
+	    if ai>max
+		max=ai
+	    end if
+	display max	
+End

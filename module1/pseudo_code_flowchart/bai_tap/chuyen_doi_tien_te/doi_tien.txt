@@ -1,0 +1,5 @@
+Begin
+	input nhập dolla
+	tổng=dolla*23000
+        display tổng
+End

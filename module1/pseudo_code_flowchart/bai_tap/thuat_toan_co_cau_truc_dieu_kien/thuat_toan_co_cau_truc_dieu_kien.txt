@@ -1,0 +1,20 @@
+Begin
+	input diem
+	if diem >= 75
+	   display loại a
+	else
+	    if diem < 75  and diem >= 60
+	       display loại b
+	    else
+		if diem < 60 and diem >= 45
+		   display loại c
+		else
+		    if diem < 45 and diem >= 30
+		       display loại d
+		    else
+			display loại e
+		    end if
+		end if
+	    end if
+	end if
+End
