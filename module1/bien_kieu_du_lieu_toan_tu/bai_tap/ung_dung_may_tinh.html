@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ứng Dụng Máy Tính</title>
+</head>
+<body>
+<div>
+    <label><input name="text1" id="t1"</label>
+    <label><input name="text2" id="t2"</label>
+</div>
+<br>
+<div>
+    <label><input type="button" value="Addition(+)" onclick="add()" </label>
+    <label><input type="button" value="Subtraction(-)" onclick="sub()" </label>
+    <label><input type="button" value="Multiplicaition(x)" onclick="mul()" </label>
+    <label><input type="button" value="Division(/)" onclick="div()" </label>
+</div>
+<div id="Tong"</div>
+<div id="Hieu"</div>
+<div id="Tich"</div>
+<div id="Thuong"</div>
+<script>
+    function add() {
+        var t1 = document.getElementById("t1").value
+        var t2 = document.getElementById("t2").value
+        var tong = Number(t1) + Number(t2)
+        document.getElementById("Tong").innerHTML = tong;
+    }
+
+    function sub() {
+        var t1 = document.getElementById("t1").value
+        var t2 = document.getElementById("t2").value
+        var hieu = Number(t1) - Number(t2)
+        document.getElementById("Hieu").innerHTML = hieu;
+    }
+
+    function mul() {
+        var t1 = document.getElementById("t1").value
+        var t2 = document.getElementById("t2").value
+        var tich = Number(t1) * Number(t2)
+        document.getElementById("Tich").innerHTML = tich;
+    }
+
+    function div() {
+        var t1 = document.getElementById("t1").value
+        var t2 = document.getElementById("t2").value
+        var thuong = Number(t1) / Number(t2)
+        document.getElementById("Thuong").innerHTML = thuong;
+    }
+</script>
+</body>
+</html>

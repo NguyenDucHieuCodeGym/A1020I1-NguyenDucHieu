@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chuyển Đổi Tiền Tệ</title>
+</head>
+<body>
+<table>
+    <tr>
+        <th>Amount</th>
+        <th>From Currency</th>
+        <th>To Currenccy</th>
+    </tr>
+    <td>
+        <input type="text" name="giatri" id="gt" size="15"/>
+    </td>
+    <td>
+        <select>
+            <option value="  ">đồng tiền gốc</option>
+            <option>Việt Nam</option>
+        </select>
+    </td>
+    <td>
+        <select>
+            <option value="  ">đồng tiền chuyển</option>
+            <option>USD</option>
+        </select>
+    </td>
+    <td>
+        <input type="button" value="Convert" onclick="convert()"/>
+    </td>
+    <tr>
+        <td>
+            <label> result: </label>
+            <label  id="result" </label>
+        </td>
+    </tr>
+</table>
+<script>
+    function convert() {
+        var money = document.getElementById("gt").value
+        var thanhTien = money * 23000
+        document.getElementById("result").innerHTML = thanhTien;
+    }
+</script>
+</body>
+</html>
