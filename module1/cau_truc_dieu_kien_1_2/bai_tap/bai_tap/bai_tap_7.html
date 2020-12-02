@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bài tập 7</title>
+</head>
+<body>
+<script>
+    let spg = parseInt(prompt("nhập số phút gọi:"));
+    if (spg <= 50) {
+       alert("số tiền:" + (25000 + 600 * spg));
+    } else if (spg > 50 && spg <= 150) {
+        alert("số tiền:" + (25000 + 50 * 600 + ((spg - 50) * 400)));
+    } else alert("số tiền:" + (25000 + 50*600 + 150*400 + (spg-200)*200));
+</script>
+</body>
+</html>

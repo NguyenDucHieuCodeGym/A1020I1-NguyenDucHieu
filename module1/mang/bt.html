@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>chen</title>
+</head>
+<body>
+<script>
+    let a = [];
+    for (let i = 0; i < 5; i++) {
+        a[i] = parseInt(prompt("Input a " + i + ": "));
+    }
+    let x = parseInt(prompt("nhap so x:"));
+    let viTri = parseInt(prompt("nhap vi tri chen:"));
+    a.splice(viTri, 0, x);
+    console.log(a);
+</script>
+</body>
+</html>

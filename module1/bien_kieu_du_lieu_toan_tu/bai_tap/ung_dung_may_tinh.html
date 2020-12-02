@@ -11,42 +11,39 @@
 </div>
 <br>
 <div>
-    <label><input type="button" value="Addition(+)" onclick="add()" </label>
-    <label><input type="button" value="Subtraction(-)" onclick="sub()" </label>
-    <label><input type="button" value="Multiplicaition(x)" onclick="mul()" </label>
-    <label><input type="button" value="Division(/)" onclick="div()" </label>
+    <label><input type="button" value="Addition(+)" onclick="add()"> </label>
+    <label><input type="button" value="Subtraction(-)" onclick="sub()"> </label>
+    <label><input type="button" value="Multiplicaition(x)" onclick="mul()"> </label>
+    <label><input type="button" value="Division(/)" onclick="div()" ></label>
 </div>
-<div id="Tong"</div>
-<div id="Hieu"</div>
-<div id="Tich"</div>
-<div id="Thuong"</div>
+<p id="kq"></p>
 <script>
     function add() {
         var t1 = document.getElementById("t1").value
         var t2 = document.getElementById("t2").value
         var tong = Number(t1) + Number(t2)
-        document.getElementById("Tong").innerHTML = tong;
+        document.getElementById("kq").innerHTML = tong;
     }
 
     function sub() {
         var t1 = document.getElementById("t1").value
         var t2 = document.getElementById("t2").value
         var hieu = Number(t1) - Number(t2)
-        document.getElementById("Hieu").innerHTML = hieu;
+        document.getElementById("kq").innerHTML = hieu;
     }
 
     function mul() {
         var t1 = document.getElementById("t1").value
         var t2 = document.getElementById("t2").value
         var tich = Number(t1) * Number(t2)
-        document.getElementById("Tich").innerHTML = tich;
+        document.getElementById("kq").innerHTML = tich;
     }
 
     function div() {
         var t1 = document.getElementById("t1").value
         var t2 = document.getElementById("t2").value
         var thuong = Number(t1) / Number(t2)
-        document.getElementById("Thuong").innerHTML = thuong;
+        document.getElementById("kq").innerHTML = thuong;
     }
 </script>
 </body>

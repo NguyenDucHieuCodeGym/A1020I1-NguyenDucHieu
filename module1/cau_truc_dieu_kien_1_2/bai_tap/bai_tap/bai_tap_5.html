@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bài tập 5</title>
+</head>
+<body>
+<script>
+    let kt = parseInt(prompt("nhập điểm kiểm tra:"));
+    let gk = parseInt(prompt("nhập điểm giữa kì:"));
+    let ck = parseInt(prompt("nhập điểm cuối kì:"));
+    let tb = (kt + gk * 2 + ck * 3) / 6;
+    if (tb >= 8) {
+        alert("học lực giỏi");
+    } else if (8 > tb && tb >= 6.5) {
+        alert("học lực khá");
+    } else if (6.5 > tb && tb >= 5) {
+        alert("học lực trung bình");
+    } else if (6.5 > tb && tb >= 5) {
+        alert("học lực trung bình");
+    } else if (5 > tb && tb >= 3.5) {
+        alert("học lực yếu");
+    } else alert("học lực kém");
+</script>
+</body>
+</html>
