@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bt2</title>
+</head>
+<body>
+<script>
+    let a = new Array(10);
+    for (i = 0; i < a.length; i++) {
+        a[i] = parseInt(prompt("nhap a" + i + ":"));
+    }
+    console.log(a);
+    let max = a[0];
+    let viTri = 0;
+    for (let i = 1; i < a.length; i++) {
+        if (a[i] > max) {
+            max = a[i];
+            viTri = i;
+        }
+    }
+    console.log("max: " + max + " vi tri: " + viTri);
+</script>
+</body>
+</html>

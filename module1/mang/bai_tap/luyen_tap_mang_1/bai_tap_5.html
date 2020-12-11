@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bt5</title>
+</head>
+<body>
+<script>
+    let a = new Array(5);
+    for (let i = 0; i < a.length; i++) {
+        a[i] = parseInt(prompt("nhap phan tu thu "+ i +" cua mang:"));
+    }
+    console.log(a);
+    let dem=0;
+    let kq=0;
+    for (let i=1;i<a.length;i++){
+        if (a[i]<0){
+            dem=a[i];
+            kq++;
+        }
+
+        console.log(kq);
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bt7</title>
+</head>
+<body>
+<script>
+    let mang = new Array(10);
+    for (let i = 0; i < mang.length; i++) {
+        mang[i] = parseInt(prompt("nhap phan tu thu " + i + " cua mang:"));
+    }
+    document.write(mang+"<br>");
+
+    let v = parseInt(prompt("nhap so v:"));
+    for (let i = 0; i < mang.length; i++){
+        if (v==mang[i]){
+            mang.splice(i,1);
+            i--;
+            mang.push(0);
+        }
+    }
+   document.write(mang);
+</script>
+</body>
+</html>

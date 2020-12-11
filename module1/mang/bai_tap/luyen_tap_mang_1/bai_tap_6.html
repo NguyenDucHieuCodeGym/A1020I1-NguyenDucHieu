@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bt6</title>
+</head>
+<body>
+<script>
+    let mang = new Array(10);
+    for (let i = 1; i < mang.length; i++) {
+        mang[i] = parseInt(prompt("nhap phan tu thu " + i + " cua mang:"));
+    }
+    console.log(mang);
+    let v = parseInt(prompt("nhap so v:"));
+    for (let i = 1; i < mang.length; i++) {
+        if (v == mang[i]) {
+            console.log("V is in the array");
+            break;
+        } else {
+            console.log("V is not in the array");
+            break;
+        }
+    }
+</script>
+</body>
+</html>

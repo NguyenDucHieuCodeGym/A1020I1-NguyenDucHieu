@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a = new Array(10);
+    for (i = 0; i < a.length; i++) {
+        a[i] = parseInt(prompt("nhap a" + i + ":"));
+    }
+    console.log(a)
+    for (i = 0; i < a.length; i++) {
+        if (a[i] > 10) {
+            a[i]++;
+            console.log(a[i]);
+        }
+    }
+</script>
+</body>
+</html>

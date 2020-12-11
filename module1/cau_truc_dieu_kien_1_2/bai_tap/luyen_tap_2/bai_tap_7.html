@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bt 7</title>
+</head>
+<body>
+<script>
+    let a = parseInt(prompt("nhập a: "));
+    let b = parseInt(prompt("nhập b: "));
+    let c = parseInt(prompt("nhập c: "));
+    let delta = (b*b)-4*(a*c);
+    if (delta > 0){
+        console.log("pt có 2 nghiệm:  x1= " + (-b-Math.sqrt(delta))/(2*a) + "   x2= " + (-b+Math.sqrt(delta))/(2*a));
+    } else if (delta == 0){
+        console.log("pt có nghiệm kép x1 = x2 = " + -b/(2*a));
+    }else console.log("pt vô nghiệm");
+</script>
+</body>
+</html>

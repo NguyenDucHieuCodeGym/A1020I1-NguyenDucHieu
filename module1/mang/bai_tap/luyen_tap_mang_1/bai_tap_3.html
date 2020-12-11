@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bt3</title>
+</head>
+<body>
+<script>
+    let a = new Array(5);
+    for (let i = 0; i < a.length; i++) {
+        a[i] = parseInt(prompt("nhap a" + i + ":"));
+    }
+    console.log(a);
+    let kq = 0;
+    let max = a[0];
+    for (let i = 0; i < a.length; i++) {
+        kq += a[i];
+        if (a[i] > max) {
+            max = a[i];
+        }
+    }
+    console.log("max:" + max);
+    console.log(kq / a.length);
+</script>
+</body>
+</html>
