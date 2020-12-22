@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="bK">
+<input type="button" value="dienTich" onclick="dT()">
+<input type="button" value="chuVi" onclick="cV()">
+<div id="kQ"></div>
+<script>
+    function dT() {
+        let r = parseInt(document.getElementById("bK").value);
+        document.getElementById("kQ").innerHTML = r * r * 3.14;
+    }
+
+    function cV() {
+        let r = parseInt(document.getElementById("bK").value);
+        document.getElementById("kQ").innerHTML = 2 * r * 3.14;
+    }
+</script>
+</body>
+</html>

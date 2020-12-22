@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bt3</title>
+</head>
+<body>
+<div id="result3_1"></div>
+<div id="result3_2"></div>
+<div id="result3_3"></div>
+<div id="result3_4"></div>
+<script>
+    function tamgiac_1() {
+        let i = 1
+        let n = 5
+        let tamgiac = ''
+        while (i <= n) {
+            for (let j = 0; j < i; j++) {
+                tamgiac += '*'
+            }
+            tamgiac += "<br>"
+            i++
+        }
+        document.getElementById('result3_1').innerHTML = tamgiac
+    }
+
+    tamgiac_1();
+
+    function tamgiac_2() {
+        let i = 5
+        let n = 1
+        let tamgiac = '<br>'
+        while (i >= n) {
+            for (let j = 0; j < i; j++) {
+                tamgiac += '*'
+            }
+            tamgiac += "<br>"
+            i--
+        }
+        document.getElementById('result3_2').innerHTML = tamgiac
+    }
+
+    tamgiac_2();
+
+    function tamgiac_3() {
+        let i = 1
+        let n = 5
+        let tamgiac = '<br>'
+        while (i <= n) {
+            for (let j = 0; j < (n - i); j++) {
+                tamgiac += '&nbsp;&nbsp;'
+            }
+            for (let j = 0; j < i; j++) {
+                tamgiac += '*'
+            }
+            tamgiac += "<br>"
+            i++
+        }
+        document.getElementById('result3_3').innerHTML = tamgiac
+    }
+
+    tamgiac_3();
+
+    function tamgiac_4() {
+        let i = 1
+        let n = 5
+        let tamgiac = '<br>';
+        while (i <= n) {
+            for (let j = 1; j < i; j++) {
+                tamgiac += "&nbsp;&nbsp;";
+            }
+            for (let j = 6; j > i; j--) {
+                tamgiac += "*";
+            }
+            tamgiac += "<br/>";
+            i++
+        }
+        document.getElementById('result3_4').innerHTML = tamgiac
+    }
+
+    tamgiac_4();
+</script>
+</body>
+</html>

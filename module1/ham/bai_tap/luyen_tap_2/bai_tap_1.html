@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="nhap">
+<input type="button" value="Bình Phương" onclick="bP()">
+<div id="kQ"></div>
+<script>
+    function bP() {
+        let a = parseInt(document.getElementById("nhap").value);
+        document.getElementById("kQ").innerHTML = a * a;
+    }
+</script>
+</body>
+</html>

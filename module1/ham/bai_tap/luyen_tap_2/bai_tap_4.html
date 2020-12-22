@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="nhap">
+<input type="button" value="kiem tra" onclick="check()">
+<div id="kQ"></div>
+<script>
+    function check() {
+        let kT = document.getElementById("nhap").value;
+        if(isNaN(kT)){
+            document.getElementById("kQ").innerHTML="faile";
+        } else document.getElementById("kQ").innerHTML="true";
+    }
+</script>
+</body>
+</html>

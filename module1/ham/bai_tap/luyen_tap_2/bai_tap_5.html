@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="a">
+<input type="text" id="b">
+<input type="text" id="c">
+<input type="button" value="so nho nhat" onclick="sLN()">
+<div id="kQ"></div>
+<script>
+    function sLN() {
+        let a = parseInt(document.getElementById("a").value);
+        let b = parseInt(document.getElementById("b").value);
+        let c = parseInt(document.getElementById("c").value);
+        if (a < b && a < c) {
+            document.getElementById("kQ").innerHTML = a;
+        } else if (b < c) {
+            document.getElementById("kQ").innerHTML = b;
+        } else document.getElementById("kQ").innerHTML = c;
+    }
+</script>
+</body>
+</html>

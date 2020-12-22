@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Yêu Cầu 1</title>
+</head>
+<body>
+<script>
+    let ten = prompt("nhập tên:");
+    let cmnd = prompt("nhập số CMND:");
+    let ngaySinh = prompt("nhập ngày tháng năm sinh:");
+    let email = prompt("nhập Email:");
+    let diaChi = prompt("nhập địa chỉ:");
+    let loaiKhachHang = prompt("nhập loại Custommer:");
+    let giamGia = prompt("nhập giảm giá:");
+    let soluongDiKem = prompt("nhập số lượng đi kèm:");
+    let soNgayThue = prompt("nhập số ngày thuê:");
+    let loaiDichVu = prompt("nhập loại dịch vu");
+    let loaiPhongThue = prompt("nhập loại phòng thuê:");
+    let soTienPhaiTra = 300 * soNgayThue * (1 - giamGia / 100);
+    alert("ten:" + ten + "cmnd:" + cmnd + "số tiền phải trả:" + soTienPhaiTra);
+</script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="a">
+<input type="text" id="b">
+<input type="button" value="doi vi tri" onclick="doi()">
+<div id="kQ"></div>
+<script>
+    function doi() {
+        let a = parseInt(document.getElementById("a").value);
+        let b = parseInt(document.getElementById("b").value);
+        document.getElementById("kQ").innerHTML = b + " ; " + a;
+    }
+</script>
+</body>
+</html>

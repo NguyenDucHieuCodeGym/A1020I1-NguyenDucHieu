@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class rat {
+        constructor(ten, khoiLuong, tocDo, trangThai) {
+            this.ten = ten;
+            this.khoiLuong = khoiLuong;
+            this.tocDo = tocDo;
+            this.trangThai = trangThai;
+        }
+
+        keu() {
+            console.log("chit, chit");
+        }
+    }
+
+    class cat {
+        constructor(ten, khoiLuong, tocDo) {
+            this.ten = ten;
+            this.khoiLuong = khoiLuong;
+            this.tocDo = tocDo;
+        }
+
+        keu() {
+            console.log("meo, meo");
+        }
+
+        batChuot(rat) {
+            if (this.tocDo > rat.tocDo) {
+                console.log("meo da bat duoc chuot");
+                this.anChuot(rat);
+            } else console.log("meo khong bat duoc chuot");
+        }
+
+        anChuot(rat) {
+            if (rat.trangThai === "song") {
+                this.khoiLuong += rat.khoiLuong;
+                console.log("meo da an chuot.khoi luong meo la: " + this.khoiLuong);
+            } else console.log("chuot chet khong an");
+        }
+    }
+
+    let chuot = new rat("jerry", 5, 10, "song");
+    let meo = new cat("tom", 10, 15);
+    chuot.keu();
+    meo.keu();
+    meo.batChuot(chuot);
+</script>
+</body>
+</html>

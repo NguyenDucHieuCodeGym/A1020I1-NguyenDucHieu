@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" value="mang" onclick="nhap()">
+<div id="nhap"></div>
+<div id="dao"></div>
+<script>
+    function nhap() {
+        let mang = new Array();
+        let n = parseInt(prompt("nhap so phan tu"));
+        for (let i = 0; i < n; i++) {
+            mang[i] = parseInt(prompt("nhap vao phan tu thu " + i + "cua mang :"));
+        }
+        document.getElementById("nhap").innerHTML = mang;
+        document.getElementById("dao").innerHTML = mang.reverse();
+    }
+</script>
+</body>
+</html>

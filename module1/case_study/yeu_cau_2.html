@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Yêu Cầu 2</title>
+</head>
+<body>
+<script>
+    let ten = "Hải";
+    let cmnd = "12345";
+    let ngaySinh = "12/12/1234";
+    let email = "abc@abc.abc";
+    let diaChi = "Quảng Nam";
+    let loaiKhachHang = "Diamond";
+    let giamGia = 10;
+    let soluongDiKem = 10;
+    let soNgayThue = 7;
+    let loaiDichVu = "Villa";
+    let loaiPhongThue = "Vip";
+    let soTienPhaiTra;
+    let choose = parseInt(prompt("1. Hiển thị thông tin khách hàng." + "\n" +
+        "2. Chỉnh sữa thông tin khách hàng." + "\n" +
+        "3. Hiển thị giá sau khi được giảm giá."));
+
+    switch (choose) {
+        case 1: {
+            alert("ten: " + ten + "\n" +
+                "cmnd: " + cmnd + "\n" +
+                "ngay sinh: " + ngaySinh + "\n" +
+                "email: " + email + "\n" +
+                "dia chi: " + diaChi + "\n" +
+                "loai khach hang: " + loaiKhachHang + "\n" +
+                "giam gia: " + giamGia + "\n" +
+                "so luong di kem: " + soluongDiKem + "\n" +
+                "so ngay thue: " + soNgayThue + "\n" +
+                "loai dich vu: " + loaiDichVu + "\n" +
+                "loai phong thue: " + loaiPhongThue);
+            break;
+        }
+        case 2: {
+            let chooseEdit = parseInt(prompt("1.ten: " + ten + "\n" +
+                "2.cmnd: " + cmnd + "\n" +
+                "3.ngay sinh: " + ngaySinh + "\n" +
+                "4.email: " + email + "\n" +
+                "5.dia chi: " + diaChi + "\n" +
+                "6.loai khach hang: " + loaiKhachHang + "\n" +
+                "7.giam gia: " + giamGia + "\n" +
+                "8.so luong di kem: " + soluongDiKem + "\n" +
+                "9.so ngay thue: " + soNgayThue + "\n" +
+                "10.loai dich vu: " + loaiDichVu + "\n" +
+                "11.loai phong thue: " + loaiPhongThue));
+            switch (chooseEdit) {
+                case 1:{
+                    ten = prompt("nhập tên:");
+                    break;
+                }
+                case 2:{
+                    cmnd = prompt("nhập số CMND:");
+                    break;
+                }
+                case 3:{
+                    ngaySinh = prompt("nhập ngày tháng năm sinh:");
+                    break;
+                }
+                case 4:{
+                    email = prompt("nhập Email:");
+                    break;
+                }
+                case 5:{
+                    diaChi = prompt("nhập địa chỉ:");
+                    break;
+                }
+                case 6:{
+                    loaiKhachHang = prompt("nhập loại Custommer:");
+                    break;
+                }
+                case 7:{
+                    giamGia = prompt("nhập giảm giá:");
+                    break;
+                }
+                case 8:{
+                    soluongDiKem = prompt("nhập số lượng đi kèm:");
+                    break;
+                }
+                case 9:{
+                    soNgayThue = prompt("nhập số ngày thuê:");
+                    break;
+                }
+                case 10:{
+                    loaiDichVu = prompt("nhập loại dịch vu");
+                    break;
+                }
+                case 11:{
+                    loaiPhongThue = prompt("nhập loại phòng thuê:");
+                    break;
+                }
+                default:{
+                    alert("failed");
+                }
+             }
+            alert("ten: " + ten + "\n" +
+                "cmnd: " + cmnd + "\n" +
+                "ngay sinh: " + ngaySinh + "\n" +
+                "email: " + email + "\n" +
+                "dia chi: " + diaChi + "\n" +
+                "loai khach hang: " + loaiKhachHang + "\n" +
+                "giam gia: " + giamGia + "\n" +
+                "so luong di kem: " + soluongDiKem + "\n" +
+                "so ngay thue: " + soNgayThue + "\n" +
+                "loai dich vu: " + loaiDichVu + "\n" +
+                "loai phong thue: " + loaiPhongThue);
+            break;
+        }
+        default:{
+            alert("su lua chon cua ban khong dung.");
+        }
+    }
+</script>
+</body>
+</html>

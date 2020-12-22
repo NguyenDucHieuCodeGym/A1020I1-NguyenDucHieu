@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 0 1 1 2 3 5 8
+    let a = 0;
+    let b = 1;
+    let c = 0;
+    let count =0;
+    let tong=a+b;
+    let string = a + ", " + b + ",";
+    while (count<18) {
+        c = a + b;
+        tong+=c;
+        string += c + ", ";
+        a = b;
+        b = c;
+        count++;
+    }
+    document.write(string);
+    document.write("<br>" +tong);
+</script>
+</body>
+</html>

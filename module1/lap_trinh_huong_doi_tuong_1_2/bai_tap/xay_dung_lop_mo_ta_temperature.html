@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class temperature {
+        constructor(doC) {
+            this.doC = doC;
+        }
+        chuyenCSangF() {
+            return (9 / 5 * this.doC + 32);
+        }
+
+        chuyenCSangKenvin() {
+            return (this.doC + 273.15);
+        }
+    }
+    let nhietDo = new temperature(25);
+    document.write(nhietDo.doC + "<br>");
+    document.write(nhietDo.chuyenCSangF() + "<br>");
+    document.write(nhietDo.chuyenCSangKenvin());
+</script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>hcn</title>
+</head>
+<body>
+<canvas id="canvasShape" height="500" width="500"></canvas>
+<script>
+    class rectangle {
+        constructor(width, height) {
+            this.width = width;
+            this.height = height;
+        }
+
+        dienTich() {
+            return this.width * this.height;
+        }
+
+        chuVi() {
+            return ((this.width + this.height) * 2);
+        }
+
+        show(color) {
+            let canvasS = document.getElementById("canvasShape");
+            let context = canvasS.getContext("2d");
+            context.fillStyle = color;
+            context.rect(200, 200, this.width, this.height);
+            context.stroke();
+            context.fill();
+        }
+    }
+    let hcn = new rectangle(100, 200);
+    document.write("<br>"+"chieu rong la: " + hcn.width + "<br>");
+    document.write("chieu dai la: " + hcn.height + "<br>");
+    document.write("dien tich la: " + hcn.dienTich() + "<br>");
+    document.write("chu vi la: " + hcn.chuVi());
+    hcn.show("blue");
+</script>
+</body>
+</html>
