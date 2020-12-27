@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let mangDanhSachKhachHang = [];
+
+    function hienThiDanhSach() {
+        let choose = parseInt(prompt("1.Thêm khách hàng mới." + "\n2.Hiển thị thông tin khách hàng."
+            + "\n3.Chỉnh sửa thông tin khách hàng." + "\n4.Xóa khách hàng." + "\n5.Thoát."));
+        switch (choose) {
+            case 1: {
+                themKhachHang();
+                break;
+            }
+            case 2: {
+                hienThiKhachHang();
+                break;
+            }
+            case 3: {
+                suaThongTinKhachHang();
+                break;
+            }
+            case 4: {
+                xoaThongTinKhachHang();
+                break;
+            }
+            case 5: {
+                break;
+            }
+            default: {
+                alert("failed")
+            }
+        }
+    }
+    function xoaThongTinKhachHang() {
+        let temp = "";
+        for (let i = 0; i < mangDanhSachKhachHang.length; i++) {
+            temp += i + ".tên: " + mangDanhSachKhachHang[i][0] + "\n";
+        }
+        let chooseDelete=parseInt(prompt(temp));
+        let check=parseInt(prompt("Bạn có muốn xóa khách hàng không?"+"\n1.Yes    2.No"));
+        if (check===1){
+            mangDanhSachKhachHang.splice(chooseDelete,1);
+            alert("Bạn đã xóa thành công.");
+        } else {
+            alert("Cancel");
+        }
+        hienThiDanhSach();
+    }
+
+    function suaThongTinKhachHang() {
+        let temp = "";
+        for (let i = 0; i < mangDanhSachKhachHang.length; i++) {
+            temp += i + ".tên: " + mangDanhSachKhachHang[i][0] + "\n";
+        }
+        let choose = parseInt(prompt(temp));
+        let chooseEdit = parseInt(prompt("1.ten: " + mangDanhSachKhachHang[choose][0] + "\n" +
+            "2.cmnd: " + mangDanhSachKhachHang[choose][1] + "\n" +
+            "3.ngay sinh: " + mangDanhSachKhachHang[choose][2] + "\n" +
+            "4.email: " + mangDanhSachKhachHang[choose][3] + "\n" +
+            "5.dia chi: " + mangDanhSachKhachHang[choose][4] + "\n" +
+            "6.loai khach hang: " + mangDanhSachKhachHang[choose][5] + "\n" +
+            "7.giam gia: " + mangDanhSachKhachHang[choose][6] + "\n" +
+            "8.so luong di kem: " + mangDanhSachKhachHang[choose][7] + "\n" +
+            "9.so ngay thue: " + mangDanhSachKhachHang[choose][8] + "\n" +
+            "10.loai dich vu: " + mangDanhSachKhachHang[choose][9] + "\n" +
+            "11.loai phong thue: " + mangDanhSachKhachHang[choose][10]));
+        switch (chooseEdit) {
+            case 1: {
+                mangDanhSachKhachHang[choose][0] = prompt("nhập tên: ");
+                break;
+            }
+            case 2: {
+                mangDanhSachKhachHang[choose][1] = prompt("nhập cmnd: ");
+                break;
+            }
+            case 3: {
+                mangDanhSachKhachHang[choose][2] = prompt("nhập ngày sinh: ");
+                break;
+            }
+            case 4: {
+                mangDanhSachKhachHang[choose][3] = prompt("nhập email: ");
+                break;
+            }
+            case 5: {
+                mangDanhSachKhachHang[choose][4] = prompt("nhập địa chỉ: ");
+                break;
+            }
+            case 6: {
+                mangDanhSachKhachHang[choose][5] = prompt("nhập loại khách hàng: ");
+                break;
+            }
+            case 7: {
+                mangDanhSachKhachHang[choose][6] = prompt("nhập giảm giá: ");
+                break;
+            }
+            case 8: {
+                mangDanhSachKhachHang[choose][7] = prompt("nhập số lượng đi kèm: ");
+                break;
+            }
+            case 9: {
+                mangDanhSachKhachHang[choose][8] = prompt("nhập số ngày thuê: ");
+                break;
+            }
+            case 10: {
+                mangDanhSachKhachHang[choose][9] = prompt("nhập loại dịch vụ: ");
+                break;
+            }
+            case 11: {
+                mangDanhSachKhachHang[choose][10] = prompt("nhập loại phòng thuê: ");
+                break;
+            }
+            default: {
+                alert("failed");
+            }
+        }
+        suaThongTinKhachHang();
+    }
+
+    function hienThiKhachHang() {
+        let temp = "";
+        for (let i = 0; i < mangDanhSachKhachHang.length; i++) {
+            temp += i + ".tên: " + mangDanhSachKhachHang[i][0] + "\n";
+        }
+        let choose = parseInt(prompt(temp));
+        alert("ten: " + mangDanhSachKhachHang[choose][0] + "\n" +
+            "cmnd: " + mangDanhSachKhachHang[choose][1] + "\n" +
+            "ngay sinh: " + mangDanhSachKhachHang[choose][2] + "\n" +
+            "email: " + mangDanhSachKhachHang[choose][3] + "\n" +
+            "dia chi: " + mangDanhSachKhachHang[choose][4] + "\n" +
+            "loai khach hang: " + mangDanhSachKhachHang[choose][5] + "\n" +
+            "giam gia: " + mangDanhSachKhachHang[choose][6] + "\n" +
+            "so luong di kem: " + mangDanhSachKhachHang[choose][7] + "\n" +
+            "so ngay thue: " + mangDanhSachKhachHang[choose][8] + "\n" +
+            "loai dich vu: " + mangDanhSachKhachHang[choose][9] + "\n" +
+            "loai phong thue: " + mangDanhSachKhachHang[choose][10]);
+        hienThiDanhSach();
+    }
+
+    function themKhachHang() {
+        let thongTinKhachHang = [];
+        let ten = prompt("nhập tên:");
+        let cmnd = prompt("nhập số CMND:");
+        let ngaySinh = prompt("nhập ngày tháng năm sinh:");
+        let email = prompt("nhập Email:");
+        let diaChi = prompt("nhập địa chỉ:");
+        let loaiKhachHang = prompt("nhập loại khách hàng:");
+        let giamGia = prompt("nhập giảm giá:");
+        let soluongDiKem = prompt("nhập số lượng đi kèm:");
+        let soNgayThue = prompt("nhập số ngày thuê:");
+        let loaiDichVu = prompt("nhập loại dịch vu");
+        let loaiPhongThue = prompt("nhập loại phòng thuê:");
+        thongTinKhachHang.push(ten);
+        thongTinKhachHang.push(cmnd);
+        thongTinKhachHang.push(ngaySinh);
+        thongTinKhachHang.push(email);
+        thongTinKhachHang.push(diaChi);
+        thongTinKhachHang.push(loaiKhachHang);
+        thongTinKhachHang.push(giamGia);
+        thongTinKhachHang.push(soluongDiKem);
+        thongTinKhachHang.push(soNgayThue);
+        thongTinKhachHang.push(loaiDichVu);
+        thongTinKhachHang.push(loaiPhongThue);
+        mangDanhSachKhachHang.push(thongTinKhachHang);
+        alert("Bạn đã thêm thành công.");
+        hienThiDanhSach()
+    }
+
+    hienThiDanhSach();
+</script>
+</body>
+</html>

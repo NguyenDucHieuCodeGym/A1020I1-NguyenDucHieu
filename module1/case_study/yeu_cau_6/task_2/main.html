@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="Employee.js"></script>
+</head>
+<body>
+<script>
+    let mangDanhSachNhanVien = []
+    function hienThiDanhSach() {
+        let choose = parseInt(prompt("1.Thêm nhân viên mới." + "\n" +
+            "2.Hiển thị thông tin Nhân viên." + "\n" +
+            "3.Lương của nhân viên" + "\n" +
+            "4.Thoát"));
+        switch (choose) {
+            case 1: {
+                themNhanVien();
+                break;
+            }
+            case 2: {
+                hienThiNhanVien();
+                break;
+            }
+            case 3: {
+                hienThiLuong();
+                break;
+            }
+            case 4: {
+                break;
+            }
+            default: {
+                alert("Failed")
+            }
+        }
+    }
+
+    function themNhanVien() {
+        let employee = new Employee();
+        employee.setTen(prompt("Nhập tên: "));
+        employee.setCMND(prompt("Nhập chứng minh nhân dân: "));
+        employee.setNgaySinh(prompt("Nhập ngày tháng năm sinh: "));
+        employee.setEmail(prompt("Nhập email: "));
+        employee.setDienThoai(prompt("Nhập số điện thoại: "));
+        employee.setTrinhDo(prompt("Nhập trình độ: "));
+        employee.setViTri(prompt("Nhập vị trí: "));
+        mangDanhSachNhanVien.push(employee);
+        alert("Bạn đã thêm thành công employee")
+        hienThiDanhSach();
+    }
+
+    function hienThiNhanVien() {
+        let result = "";
+        for (let i = 0; i < mangDanhSachNhanVien.length; i++){
+            result += i + ". Name: " +mangDanhSachNhanVien[i].getTen() + "\n";
+        }
+        let chooseDisplay = parseInt(prompt(result));
+        alert("Tên: " + mangDanhSachNhanVien[chooseDisplay].getTen() + "\n" +
+            "chứng minh nhân dân: " + mangDanhSachNhanVien[chooseDisplay].getCMND() + "\n" +
+            "Ngày sinh: " + mangDanhSachNhanVien[chooseDisplay].getNgaySinh() + "\n" +
+            "Email: " + mangDanhSachNhanVien[chooseDisplay].getEmail() + "\n" +
+            "Số điện thoại: " + mangDanhSachNhanVien[chooseDisplay].getDienThoai() + "\n" +
+            "Trình độ: " + mangDanhSachNhanVien[chooseDisplay].getTrinhDo() + "\n" +
+            "Vị trí: " + mangDanhSachNhanVien[chooseDisplay].getViTri())
+        hienThiDanhSach();
+    }
+
+    function hienThiLuong() {
+        let result = "";
+        for (let i = 0; i < mangDanhSachNhanVien.length; i++){
+            result += i + ". Name: " +mangDanhSachNhanVien[i].getTen() + "\n";
+        }
+        let chooseDisplay = parseInt(prompt(result));
+        alert("Luong của nhân viên " + mangDanhSachNhanVien[chooseDisplay].getTen() + " là: " + mangDanhSachNhanVien[chooseDisplay].getLuong() + "\n");
+        hienThiDanhSach();
+    }
+    hienThiDanhSach();
+</script>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Yeu Cau 3</title>
+</head>
+<body>
+<script>
+    let check = false;
+    let tempten = "";
+    let ten = prompt("nhập tên:");
+    ten = ten.trim().toLowerCase();
+    for (let i = 0; i < ten.length; i++) {
+        if (ten.charAt(i) === " " && ten.charAt(i + 1) === " ") {
+            continue;
+        }
+        if (i === 0 || ten.charAt(i - 1) === " ") {
+            tempten += ten.charAt(i).toUpperCase();
+            continue;
+        }
+        tempten += ten.charAt(i);
+    }
+    ten = tempten;
+    do {
+        let cmnd = prompt("nhập số CMND:");
+        if (!isNaN(cmnd)) {
+            cmnd = Number.parseFloat(cmnd);
+        }
+        if (!Number.isInteger(cmnd)) {
+            alert("cmnd khong dung dinh dang");
+            continue;
+        }
+        if (cmnd < 10000000 || cmnd > 99999999) {
+            alert("cmnd khong dung dinh dang");
+            continue;
+        }
+        check = true;
+    } while (!check)
+    check = false;
+    do {
+        let ngaySinh = prompt("nhập ngày tháng năm sinh:");
+        if (ngaySinh.charAt(2) === "/" && ngaySinh.charAt(5) === "/") {
+            let ngay = ngaySinh.substring(0, 2);
+            let thang = ngaySinh.substring(3, 5);
+            let nam = ngaySinh.substring(6, 10);
+            if (!isNaN(ngay) && !isNaN(thang) && !isNaN(nam)) {
+                ngay = Number.parseFloat(ngay);
+                thang = Number.parseFloat(thang);
+                nam = Number.parseFloat(nam);
+                if (Number.isInteger(ngay) && Number.isInteger(thang) && Number.isInteger(nam)) {
+                    if (ngay < 32 && thang < 13) {
+                        check = true;
+                    }
+                }
+            }
+        }
+        if (!check) {
+            alert("ngay sinh ko dung dinh dang");
+        }
+    } while (!check)
+    check = false;
+    do {
+        let demAt = 0;
+        let demDoc = 0;
+        let email = prompt("nhập Email:");
+        for (let i = 0; i < email.length; i++) {
+            if (email.charAt(i) === "@") {
+                demAt++;
+                for (let j = i + 1; j < email.length; j++) {
+                    if (email.charAt(j) === ".") {
+                        demDoc++;
+                    }
+                }
+            }
+        }
+        if (demAt != 1 || demDoc < 1) {
+            alert("Email vua nhap khong dung.");
+        } else check = true;
+    }
+    while (!check)
+    check = false;
+    diaChi = prompt("nhập địa chỉ:");
+    let loaiKhachHang = prompt("nhập loại khách hàng:");
+    let giamGia = prompt("nhập giảm giá:");
+    let soluongDiKem = prompt("nhập số lượng đi kèm:");
+    do {
+        let soNgayThue = prompt("nhập số ngày thuê:");
+        if (!isNaN(soNgayThue)) {
+            soNgayThue = Number.parseFloat(soNgayThue);
+            if (Number.isInteger(soNgayThue) && (soNgayThue > 0)) {
+                check = true;
+            }
+        }
+        if (!check) {
+            alert("so ngay thue khong dung");
+        }
+    } while (!check)
+    check = false;
+    let loaiDichVu = prompt("nhập loại dịch vu");
+    let loaiPhongThue = prompt("nhập loại phòng thuê:");
+    let soTienPhaiTra = 300 * soNgayThue * (1 - giamGia / 100);
+</script>
+</body>
+</html>

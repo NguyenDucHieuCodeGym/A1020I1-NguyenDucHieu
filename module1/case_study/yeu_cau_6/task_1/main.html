@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="customer.js"></script>
+</head>
+<body>
+<script>
+    let mangDanhSachKhachHang = [];
+
+    function hienThiDanhSach() {
+        let choose = parseInt(prompt("1. Thêm khách hàng mới." + "\n" +
+            "2. Hiển thị thông tin Khách hàng." + "\n" +
+            "3. Hiển thị tổng số tiền trả cho." + "\n" +
+            "4. Chỉnh sửa thông tin Khách hàng." + "\n" +
+            "5. Xóa khách hàng." + "\n" +
+            "6. Thoát"));
+
+        switch (choose) {
+            case 1: {
+                themKhachHang();
+                break;
+            }
+            case 2: {
+                hienThiKhachHang();
+                break;
+            }
+            case 3: {
+                hienThiTongTien();
+                break;
+            }
+            case 4: {
+                suaThongTinKhachHang();
+                break;
+            }
+            case 5: {
+                xoaThongTinKhachHang();
+                break;
+            }
+            case 6: {
+                break;
+            }
+            default: {
+                alert("Failed")
+            }
+        }
+    }
+
+    function themKhachHang() {
+        let checkValid = false;
+        let cus = new Customer();
+        let ten = prompt("Nhập tên: ");
+
+        let regexCMND = /^[\d]{8,8}$/;
+        let cmnd
+        do {
+            cmnd = prompt("Nhập chứng minh nhân dân: ");
+            if (regexCMND.test(cmnd)) {
+                checkValid = true;
+            } else {
+                alert("Chứng minh nhân dân không hợp lệ");
+            }
+        } while (!checkValid);
+        checkValid = false;
+
+        let regexNgaySinh = /^([0-9]{2})\/([0-9]{2})\/([0-9]{4})$/;
+        let ngaySinh
+        do {
+            ngaySinh = prompt("Nhập ngày tháng năm sinh: ");
+            if (regexNgaySinh.test(ngaySinh)) {
+                checkValid = true;
+            } else {
+                alert("Bỉrthday không hợp lệ, vui lòng nhập lại");
+            }
+        } while (!checkValid);
+        checkValid = false;
+
+        let regexEmail = /\S+@\S+\.\S+/;
+        let email
+        do {
+            email = prompt("Nhập email: ");
+            if (regexEmail.test(email)) {
+                checkValid = true;
+            } else {
+                alert("Email không hợp lệ, vui lòng nhập lại.")
+            }
+        } while (!checkValid);
+        checkValid = false;
+
+        let diaChi = prompt("Nhập địa chỉ: ");
+        let loaiKhachHang = prompt("Nhập loại khách hàng: " + "\n" + "1. Diamond" + "\n" + "2. Platinum" + "\n" + "3. Gold" + "\n" + "4. Silver" + "\n" + "5. Member" + "\n");
+
+        let regexNum = /^\d+$/;
+        let giamGia;
+        do {
+            giamGia = prompt("Nhập giảm giá: ");
+            if (regexNum.test(giamGia)) {
+                checkValid = true;
+            } else {
+                alert("Discount không hợp lệ, vui lòng nhập lại.")
+            }
+        } while (!checkValid);
+        checkValid = false;
+
+        let soLuongDiKem;
+        do {
+            soLuongDiKem = prompt("Nhập số lượng đi kèm: ");
+            if (regexNum.test(soLuongDiKem)) {
+                checkValid = true;
+            } else {
+                alert("Số lượng di kèm không hợp lệ, vui lòng nhập lại.")
+            }
+        } while (!checkValid);
+        checkValid = false;
+
+        let soNgayThue;
+        do {
+            soNgayThue = prompt("Nhập số ngày thuê: ");
+            if (regexNum.test(soNgayThue)) {
+                checkValid = true;
+            } else {
+                alert("Số ngày thuê không hợp lệ, vui lòng nhập lại.")
+            }
+        } while (!checkValid);
+        checkValid = false;
+
+        let loaiDichVu = prompt("Nhập loại dịch vụ: " + "\n" + "1. Villa" + "\n" + "2. House" + "\n" + "3. Room" + "\n");
+        let loaiPhongThue = prompt("Nhập loại phòng: " + "\n" + "1. Vip" + "\n" + "2. Business" + "\n" + "3. Normal" + "\n");
+
+        cus.setTen(ten);
+        cus.setCMND(cmnd);
+        cus.setNgaySinh(ngaySinh);
+        cus.setEmail(email);
+        cus.setDiaChi(diaChi);
+        cus.setLoaiKhachHang(loaiKhachHang);
+        cus.setGiamGia(giamGia);
+        cus.setSoLuongDiKem(soLuongDiKem);
+        cus.setSoNgayThue(soNgayThue);
+        cus.setLoaiDichVu(loaiDichVu);
+        cus.setLoaiPhongThue(loaiPhongThue);
+
+        mangDanhSachKhachHang.push(cus);
+        hienThiDanhSach();
+    }
+
+    function hienThiKhachHang() {
+        let temp = "";
+        for (let i = 0; i < mangDanhSachKhachHang.length; i++) {
+            temp += i + ". Tên: " + mangDanhSachKhachHang[i].getTen() + "\n";
+        }
+        let chooseDisplay = parseInt(prompt(temp));
+        alert(
+            "Tên: " + mangDanhSachKhachHang[chooseDisplay].getTen() + "\n" +
+            "CMND: " + mangDanhSachKhachHang[chooseDisplay].getCMND() + "\n" +
+            "Ngày sinh: " + mangDanhSachKhachHang[chooseDisplay].getNgaySinh() + "\n" +
+            "Email: " + mangDanhSachKhachHang[chooseDisplay].getEmail() + "\n" +
+            "Địa chỉ: " + mangDanhSachKhachHang[chooseDisplay].getDiaChi() + "\n" +
+            "Loại khách hàng: " + mangDanhSachKhachHang[chooseDisplay].getLoaiKhachHang() + "\n" +
+            "Giảm giá: " + mangDanhSachKhachHang[chooseDisplay].getGiamGia() + "\n" +
+            "Số lượng đi kèm: " + mangDanhSachKhachHang[chooseDisplay].getSoLuongDiKem() + "\n" +
+            "Số ngày thuê: " + mangDanhSachKhachHang[chooseDisplay].getSoNgayThue() + "\n" +
+            "Loại dịch vụ: " + mangDanhSachKhachHang[chooseDisplay].getLoaiDichVu() + "\n" +
+            "Loại phòng thuê: " + mangDanhSachKhachHang[chooseDisplay].getLoaiPhongThue());
+        hienThiDanhSach();
+    }
+
+    function suaThongTinKhachHang() {
+        let temp = "";
+        for (let i = 0; i < mangDanhSachKhachHang.length; i++) {
+            temp += i + ". Name: " + mangDanhSachKhachHang[i].getTen() + "\n";
+        }
+        let chooseDisplay = parseInt(prompt(temp));
+        let chooseEdit = parseInt(prompt(
+            "1. Tên: " + mangDanhSachKhachHang[chooseDisplay].getTen() + "\n" +
+            "2. CMND: " + mangDanhSachKhachHang[chooseDisplay].getCMND() + "\n" +
+            "3. Ngày sinh: " + mangDanhSachKhachHang[chooseDisplay].getNgaySinh() + "\n" +
+            "4. Email: " + mangDanhSachKhachHang[chooseDisplay].getEmail() + "\n" +
+            "5. Địa chỉ: " + mangDanhSachKhachHang[chooseDisplay].getDiaChi() + "\n" +
+            "6. Loại khách hàng: " + mangDanhSachKhachHang[chooseDisplay].getLoaiKhachHang() + "\n" +
+            "7. Giảm giá: " + mangDanhSachKhachHang[chooseDisplay].getGiamGia() + "\n" +
+            "8. Số lượng đi kèm: " + mangDanhSachKhachHang[chooseDisplay].getSoLuongDiKem() + "\n" +
+            "9. Số ngày thuê: " + mangDanhSachKhachHang[chooseDisplay].getSoNgayThue() + "\n" +
+            "10. Loại dịch vụ: " + mangDanhSachKhachHang[chooseDisplay].getLoaiDichVu() + "\n" +
+            "11. Loại phòng: " + mangDanhSachKhachHang[chooseDisplay].getLoaiPhongThue()));
+        switch (chooseEdit) {
+            case 1: {
+                mangDanhSachKhachHang[chooseDisplay].ten = prompt("Nhập tên: ");
+                break;
+            }
+            case 2: {
+                mangDanhSachKhachHang[chooseDisplay].cmnd = prompt("Nhập Chứng minh nhân dân: ");
+                break;
+            }
+            case 3: {
+                mangDanhSachKhachHang[chooseDisplay].ngaySinh = prompt("Nhập ngày thắng năm sinh: ");
+                break;
+            }
+            case 4: {
+                mangDanhSachKhachHang[chooseDisplay].email = prompt("Nhập email: ");
+                break;
+            }
+            case 5: {
+                mangDanhSachKhachHang[chooseDisplay].diaChi = prompt("Nhập địa chỉ: ");
+                break;
+            }
+            case 6: {
+                mangDanhSachKhachHang[chooseDisplay].loaiKhachHang = prompt("Nhập loại khách hàng: " + "\n" + "1. Diamond" + "\n" + "2. Platinum" + "\n" + "3. Gold" + "\n" + "4. Silver" + "\n" + "5. Member");
+                break;
+            }
+            case 7: {
+                mangDanhSachKhachHang[chooseDisplay].giamGia = prompt("Nhập giảm giá: ");
+                break;
+            }
+            case 8: {
+                mangDanhSachKhachHang[chooseDisplay].soLuongDiKem = prompt("Nhập số lượng đi kèm: ");
+                break;
+            }
+            case 9: {
+                mangDanhSachKhachHang[chooseDisplay].soNgayThue = prompt("Nhập số ngày thuê: ");
+                break;
+            }
+            case 10: {
+                mangDanhSachKhachHang[chooseDisplay].loaiDichVu = prompt("Nhập loại dịch vụ: " + "\n" + "1. Vila" + "\n" + "2. House" + "\n" + "3. Room");
+                break;
+            }
+            case 11: {
+                mangDanhSachKhachHang[chooseDisplay].loaiPhongThue = prompt("Nhập loại phòng: " + "\n" + "1. Vip" + "\n" + "2. Business" + "\n" + "3. Normal");
+                break;
+            }
+            default: {
+                alert("Failed");
+            }
+        }
+        suaThongTinKhachHang();
+    }
+
+    function xoaThongTinKhachHang() {
+        let temp = "";
+        for (let i = 0; i < mangDanhSachKhachHang.length; i++) {
+            temp += i + ". Name: " + mangDanhSachKhachHang[i].getName() + "\n";
+        }
+        let chooseDelete = parseInt(prompt(temp));
+        let check = parseInt(prompt("Bạn có thật sự muốn xóa khách hàng hay không" + "\n" +
+            "1. Yes" + "\n" +
+            "2. No"));
+        if (check === 1) {
+            mangDanhSachKhachHang.splice(chooseDelete, 1);
+            alert("Bạn đã xóa thành công");
+        } else {
+            alert("Cancel");
+        }
+        hienThiDanhSach();
+    }
+
+    function hienThiTongTien() {
+        let temp = "";
+        for (let i = 0; i < mangDanhSachKhachHang.length; i++) {
+            temp += i + ". Name: " + mangDanhSachKhachHang[i].getTen() + "\n";
+        }
+        let chooseDisplay = parseInt(prompt(temp));
+        alert("Số tiền phải trả là: " + mangDanhSachKhachHang[chooseDisplay].soTienPhaiTra());
+        hienThiDanhSach();
+    }
+
+    hienThiDanhSach();
+</script>
+</body>
+</html>

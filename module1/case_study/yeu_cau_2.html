@@ -50,54 +50,54 @@
                 "10.loai dich vu: " + loaiDichVu + "\n" +
                 "11.loai phong thue: " + loaiPhongThue));
             switch (chooseEdit) {
-                case 1:{
+                case 1: {
                     ten = prompt("nhập tên:");
                     break;
                 }
-                case 2:{
+                case 2: {
                     cmnd = prompt("nhập số CMND:");
                     break;
                 }
-                case 3:{
+                case 3: {
                     ngaySinh = prompt("nhập ngày tháng năm sinh:");
                     break;
                 }
-                case 4:{
+                case 4: {
                     email = prompt("nhập Email:");
                     break;
                 }
-                case 5:{
+                case 5: {
                     diaChi = prompt("nhập địa chỉ:");
                     break;
                 }
-                case 6:{
-                    loaiKhachHang = prompt("nhập loại Custommer:");
+                case 6: {
+                    loaiKhachHang = prompt("nhập loại khách hàng:");
                     break;
                 }
-                case 7:{
+                case 7: {
                     giamGia = prompt("nhập giảm giá:");
                     break;
                 }
-                case 8:{
+                case 8: {
                     soluongDiKem = prompt("nhập số lượng đi kèm:");
                     break;
                 }
-                case 9:{
+                case 9: {
                     soNgayThue = prompt("nhập số ngày thuê:");
                     break;
                 }
-                case 10:{
+                case 10: {
                     loaiDichVu = prompt("nhập loại dịch vu");
                     break;
                 }
-                case 11:{
+                case 11: {
                     loaiPhongThue = prompt("nhập loại phòng thuê:");
                     break;
                 }
-                default:{
+                default: {
                     alert("failed");
                 }
-             }
+            }
             alert("ten: " + ten + "\n" +
                 "cmnd: " + cmnd + "\n" +
                 "ngay sinh: " + ngaySinh + "\n" +
@@ -111,7 +111,45 @@
                 "loai phong thue: " + loaiPhongThue);
             break;
         }
-        default:{
+        case 3: {
+            let giaLoaiDichVu = 0;
+            if (loaiDichVu === "Villa") {
+                giaLoaiDichVu = 500;
+            } else if (loaiDichVu === "House") {
+                giaLoaiDichVu = 300;
+            } else if (loaiDichVu === "Room") {
+                giaLoaiDichVu = 100;
+            }
+            let tienGiamGia = 0;
+            if (diaChi === "Đà Nẵng") {
+                tienGiamGia += 20;
+            } else if (diaChi === "Huế") {
+                tienGiamGia += 10;
+            } else if (diaChi === "Quảng Nam") {
+                tienGiamGia += 5;
+            }
+            if (soNgayThue > 7) {
+                tienGiamGia += 30;
+            } else if (soNgayThue > 5) {
+                tienGiamGia += 20;
+            } else if (soNgayThue > 2) {
+                tienGiamGia += 10;
+            }
+            if (loaiKhachHang === "Diamond") {
+                tienGiamGia += 15;
+            } else if (loaiKhachHang === "Platium") {
+                tienGiamGia += 10;
+            } else if (loaiKhachHang === "Gold") {
+                tienGiamGia += 5;
+            } else if (loaiKhachHang === "Silver") {
+                tienGiamGia += 2;
+            } else if (loaiKhachHang === "Member") {
+                tienGiamGia += 0;
+            }
+            alert("so tien phai tra:" + (giaLoaiDichVu * soNgayThue - tienGiamGia));
+            break;
+        }
+        default: {
             alert("su lua chon cua ban khong dung.");
         }
     }

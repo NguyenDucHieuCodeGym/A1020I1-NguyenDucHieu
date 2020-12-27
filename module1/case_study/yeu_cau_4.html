@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Yêu Cầu 2</title>
+</head>
+<body>
+<script>
+    let mangKhachHang = [];
+    while (true) {
+        let choose = parseInt(prompt("1.Thêm khách hàng mới:" + "\n" + "2.Xóa khách hàng:"));
+        switch (choose) {
+            case 1: {
+                let number = parseInt(prompt("Nhập số khách hàng bạn muốn thêm vào :"));
+                for (let i = 0; i < number; i++) {
+                    let tenKhachHang = prompt("Nhập tên khách hàng:");
+                    mangKhachHang.push(tenKhachHang);
+                }
+                let result = "";
+                mangKhachHang.sort();
+                for (let i = 0; i < mangKhachHang.length; i++) {
+                    result += (i + 1) + "." + mangKhachHang[i] + "\n";
+                }
+                alert(result);
+                break;
+            }
+            case 2: {
+                let check = false;
+                let tenKhachHang = prompt("Nhập khách hàng bạn muốn xóa:");
+                for (let i = 0; i < mangKhachHang.length; i++) {
+                    if (mangKhachHang[i] === tenKhachHang) {
+                        mangKhachHang.splice(i, 1);
+                        check = true;
+                    }
+                }
+                if (!check) {
+                    alert("Tên các bạn vừa nhập không đúng.");
+                }
+                let result = "";
+                mangKhachHang.sort();
+                for (let i = 0; i < mangKhachHang.length; i++) {
+                    result += (i + 1) + "." + mangKhachHang[i] + "\n";
+                }
+                alert(result);
+                break;
+            }
+            default: {
+                alert("Failed");
+            }
+        }
+    }
+</script>
+</body>
+</html>
