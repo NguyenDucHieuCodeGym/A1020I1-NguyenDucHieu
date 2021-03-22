@@ -2,7 +2,7 @@ package b3_mang_va_phuong_thuc_trrong_java.bai_tap.them_phan_tu_cua_mang;
 
 import java.util.Scanner;
 
-public class ThemPhanTu {
+public class    ThemPhanTu {
     public static void printArray(int[] array){
         for (int i=0; i<array.length; i++){
             System.out.print(array[i]);
